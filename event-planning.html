@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Event Planning | Nahant Life Saving Station</title>
+<link rel="canonical" href="https://nahantlifesavingstation.com/event-planning" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Event Planning | Nahant Life Saving Station" />
+<meta property="og:description" content="Work with Lynda to plan a thoughtful, memorable oceanfront event at the Nahant Life Saving Station." />
+<meta property="og:url" content="https://nahantlifesavingstation.com/event-planning" />
+<meta property="og:image" content="https://nahantlifesavingstation.com/images/wedding-ceremony.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta name="description" content="Event planning at Nahant Life Saving Station with Lynda, bringing experience planning and hosting intimate celebrations and large multi-day occasions to your oceanfront event." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #1a2e3f;
+    --ocean-deep: #0f1e2b;
+    --sand: #e8dcc4;
+    --sand-soft: #f1e8d6;
+    --cream: #f7f2e8;
+    --brass: #b8893d;
+    --brass-light: #d4a85c;
+    --storm: #6b7785;
+    --seafoam: #8aa39b;
+    --ink: #1a1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 400; font-size: 17px; line-height: 1.65;
+    color: var(--ink); background: var(--cream);
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    opacity: 0.06; pointer-events: none; z-index: 999;
+    mix-blend-mode: multiply;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Marcellus', serif; font-weight: 400;
+    letter-spacing: 0.01em; line-height: 1.15;
+  }
+  .eyebrow {
+    font-family: 'Marcellus', serif; text-transform: uppercase;
+    letter-spacing: 0.28em; font-size: 0.75rem; color: var(--brass);
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(247, 242, 232, 0); backdrop-filter: blur(0px);
+    transition: background 0.4s, backdrop-filter 0.4s, padding 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(247, 242, 232, 0.94); backdrop-filter: blur(12px);
+    padding: 0.85rem 2.5rem; border-bottom: 1px solid rgba(26, 46, 63, 0.08);
+  }
+  nav .brand {
+    font-family: 'Marcellus', serif; font-size: 1rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream); transition: color 0.4s;
+  }
+  nav.scrolled .brand { color: var(--ocean); }
+  nav .brand small {
+    display: block; font-size: 0.6rem; letter-spacing: 0.32em;
+    color: var(--brass-light); margin-top: 2px;
+  }
+  nav.scrolled .brand small { color: var(--brass); }
+  nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+  nav ul a {
+    font-family: 'Marcellus', serif; font-size: 0.78rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--cream); transition: color 0.3s; position: relative;
+  }
+  nav.scrolled ul a { color: var(--ocean); }
+  nav ul a::after {
+    content: ''; position: absolute; left: 0; bottom: -6px;
+    width: 0; height: 1px; background: currentColor; transition: width 0.3s;
+  }
+  nav ul a:hover::after { width: 100%; }
+  nav .cta-nav { border: 1px solid currentColor; padding: 0.6rem 1.4rem; }
+  nav .cta-nav::after { display: none; }
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+  /* HERO */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: flex-end;
+    padding: 6rem 2.5rem 7rem; overflow: hidden; color: var(--cream);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url("images/hero-station.jpg");
+    background-size: cover; background-position: center;
+    z-index: -2; animation: heroZoom 20s ease-out forwards;
+  }
+  @keyframes heroZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(15,30,43,0.5) 0%, rgba(15,30,43,0.2) 30%, rgba(15,30,43,0.85) 100%);
+    z-index: -1;
+  }
+  .hero-content { max-width: 1400px; width: 100%; margin: 0 auto; }
+  .hero-stamp { display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; }
+  .hero-stamp .line { width: 60px; height: 1px; background: var(--brass-light); }
+  .hero-stamp span {
+    font-family: 'Marcellus', serif; font-size: 0.78rem;
+    letter-spacing: 0.32em; text-transform: uppercase; color: var(--brass-light);
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 7rem); line-height: 0.95;
+    margin-bottom: 1.5rem; max-width: 14ch;
+  }
+  .hero h1 .ital {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-weight: 300; color: var(--brass-light);
+  }
+  .hero p.tagline {
+    font-size: 1.25rem; max-width: 50ch; margin-bottom: 2.5rem;
+    color: rgba(247, 242, 232, 0.9); font-weight: 300;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    font-family: 'Marcellus', serif; font-size: 0.82rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    padding: 1.1rem 2rem; border: 1px solid var(--cream);
+    color: var(--cream); background: transparent;
+    cursor: pointer; transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+  }
+  .btn:hover { background: var(--cream); color: var(--ocean); }
+  .btn.brass { background: var(--brass); border-color: var(--brass); color: var(--cream); }
+  .btn.brass:hover { background: var(--brass-light); border-color: var(--brass-light); }
+  .btn.dark { color: var(--ocean); border-color: var(--ocean); }
+  .btn.dark:hover { background: var(--ocean); color: var(--cream); }
+
+  .hero-stats {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(15, 30, 43, 0.88); backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(184, 137, 61, 0.35);
+    padding: 1.5rem 2.5rem;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; z-index: 5;
+  }
+  .hero-stats .stat { text-align: center; }
+  .hero-stats .stat-num {
+    font-family: 'Marcellus', serif; font-size: 2rem;
+    color: var(--brass-light); line-height: 1;
+  }
+  .hero-stats .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(247, 242, 232, 0.75); margin-top: 0.5rem;
+    font-family: 'Marcellus', serif;
+  }
+
+  section { padding: 8rem 2.5rem; position: relative; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .section-head {
+    display: grid; grid-template-columns: auto 1fr;
+    gap: 4rem; align-items: end; margin-bottom: 5rem;
+  }
+  .section-head .eyebrow-block .eyebrow { display: block; margin-bottom: 1rem; }
+  .section-head h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    color: var(--ocean); max-width: 18ch;
+  }
+  .section-head h2 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-weight: 300; color: var(--brass);
+  }
+  .section-head .lede {
+    font-size: 1.15rem; color: var(--storm);
+    max-width: 42ch; padding-bottom: 0.5rem;
+  }
+
+  /* HERITAGE */
+  .heritage { background: var(--cream); }
+  .heritage-grid {
+    display: grid; grid-template-columns: 1fr 1.1fr;
+    gap: 5rem; align-items: center;
+  }
+  .heritage-img-wrap { position: relative; }
+  .heritage-img {
+    width: 100%; aspect-ratio: 4/5;
+    background-image: url("images/heritage-lifesavers.jpg");
+    background-size: cover; background-position: center;
+    filter: sepia(0.18) contrast(1.02);
+  }
+  .heritage-img::after {
+    content: 'EST. 1898'; position: absolute;
+    bottom: -25px; right: -25px;
+    background: var(--brass); color: var(--cream);
+    font-family: 'Marcellus', serif; letter-spacing: 0.3em;
+    padding: 1rem 1.8rem; font-size: 0.9rem;
+  }
+  .heritage-caption {
+    margin-top: 1rem;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 0.95rem; color: var(--storm);
+    text-align: center; max-width: 35ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .heritage-text h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--ocean); margin-bottom: 2rem;
+  }
+  .heritage-text h2 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass);
+  }
+  .heritage-text p { margin-bottom: 1.5rem; color: #2a3b48; font-size: 1.1rem; }
+  .heritage-text .pullquote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.5rem; line-height: 1.4; color: var(--ocean);
+    border-left: 2px solid var(--brass);
+    padding-left: 1.5rem; margin: 2.5rem 0;
+  }
+
+  /* VENUE */
+  .venue { background: var(--ocean); color: var(--cream); }
+  .venue .section-head h2 { color: var(--cream); }
+  .venue .section-head h2 .ital { color: var(--brass-light); }
+  .venue .section-head .lede { color: rgba(247,242,232,0.75); }
+  .venue .eyebrow { color: var(--brass-light); }
+  .facts-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border-top: 1px solid rgba(184, 137, 61, 0.25);
+  }
+  .fact {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid rgba(184, 137, 61, 0.25);
+    border-right: 1px solid rgba(184, 137, 61, 0.25);
+  }
+  .fact:nth-child(3n) { border-right: none; }
+  .fact-num {
+    font-family: 'Marcellus', serif; font-size: 4rem;
+    color: var(--brass-light); line-height: 1; margin-bottom: 0.5rem;
+  }
+  .fact-num .unit {
+    font-size: 1.1rem; color: rgba(247,242,232,0.6);
+    margin-left: 0.5rem; letter-spacing: 0.18em;
+  }
+  .fact h4 {
+    font-size: 1.05rem; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 0.6rem; color: var(--cream);
+  }
+  .fact p { color: rgba(247,242,232,0.72); font-size: 0.98rem; }
+
+  /* CINEMATIC */
+  .cinematic {
+    position: relative; height: 80vh; min-height: 600px;
+    background-image: url("images/wedding-ceremony.jpg");
+    background-size: cover; background-position: center;
+    display: flex; align-items: center;
+    padding: 0 2.5rem; color: var(--cream);
+  }
+  .cinematic::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(15,30,43,0.6) 0%, rgba(15,30,43,0.15) 60%, rgba(15,30,43,0) 100%);
+  }
+  .cinematic-content {
+    position: relative; max-width: 1280px;
+    width: 100%; margin: 0 auto;
+  }
+  .cinematic h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1;
+    max-width: 16ch; margin-bottom: 1.5rem;
+  }
+  .cinematic h2 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass-light);
+  }
+  .cinematic p { font-size: 1.2rem; max-width: 38ch; color: rgba(247,242,232,0.9); }
+
+  /* EVENTS */
+  .events { background: var(--sand-soft); }
+  .events-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--ocean); border: 1px solid var(--ocean);
+  }
+  .event-card {
+    background: var(--cream); padding: 3rem 2.5rem;
+    transition: background 0.4s; cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .event-card:hover { background: var(--sand); }
+  .event-card .num {
+    font-family: 'Marcellus', serif; font-size: 0.75rem;
+    letter-spacing: 0.32em; color: var(--brass); margin-bottom: 1.5rem;
+  }
+  .event-card h3 { font-size: 2rem; color: var(--ocean); margin-bottom: 1rem; }
+  .event-card h3 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass);
+  }
+  .event-card p { color: #4a5662; max-width: 40ch; }
+
+  /* SHOWCASE */
+  .showcase { background: var(--cream); }
+  .showcase-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .showcase-card { position: relative; }
+  .showcase-img {
+    width: 100%; aspect-ratio: 3/4;
+    background-size: cover; background-position: center;
+    margin-bottom: 1.5rem;
+  }
+  .showcase-card h3 { font-size: 1.5rem; color: var(--ocean); margin-bottom: 0.6rem; }
+  .showcase-card h3 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass);
+  }
+  .showcase-card .label {
+    font-family: 'Marcellus', serif; font-size: 0.7rem;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--brass); margin-bottom: 0.8rem;
+  }
+  .showcase-card p { color: var(--storm); font-size: 0.98rem; max-width: 32ch; }
+
+  /* GROUNDS */
+  .grounds { background: var(--sand-soft); }
+  .grounds-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .grounds-img {
+    aspect-ratio: 4/3;
+    background-image: url("images/outdoor-tent.jpg");
+    background-size: cover; background-position: center;
+  }
+  .grounds-text h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--ocean); margin-bottom: 2rem;
+  }
+  .grounds-text h2 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass);
+  }
+  .grounds-text p { margin-bottom: 1.5rem; color: #2a3b48; font-size: 1.1rem; }
+  .grounds-features {
+    list-style: none; margin-top: 2rem; padding-top: 2rem;
+    border-top: 1px solid rgba(184, 137, 61, 0.25);
+  }
+  .grounds-features li {
+    display: flex; align-items: baseline; gap: 1rem;
+    padding: 0.7rem 0; font-size: 1rem; color: var(--ocean);
+  }
+  .grounds-features li::before {
+    content: '—'; color: var(--brass); font-family: 'Marcellus', serif;
+  }
+
+  /* INCLUDED */
+  .included { background: var(--ocean-deep); color: var(--cream); }
+  .included .section-head h2 { color: var(--cream); }
+  .included .section-head h2 .ital { color: var(--brass-light); }
+  .included .section-head .lede { color: rgba(247,242,232,0.75); }
+  .included .eyebrow { color: var(--brass-light); }
+  .included-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .included-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.8rem 0; border-bottom: 1px solid rgba(184, 137, 61, 0.2);
+    padding-right: 2rem;
+  }
+  .included-item:nth-child(odd) { padding-right: 3rem; }
+  .included-item:nth-child(even) { padding-left: 3rem; }
+  .included-item .qty {
+    font-family: 'Marcellus', serif; font-size: 2.5rem;
+    color: var(--brass-light); line-height: 1; min-width: 60px;
+  }
+  .included-item .desc h4 { font-size: 1.1rem; color: var(--cream); margin-bottom: 0.25rem; }
+  .included-item .desc p {
+    font-size: 0.85rem; color: rgba(247,242,232,0.6); letter-spacing: 0.05em;
+  }
+
+  /* CATERING MOMENT */
+  .catering-moment { background: var(--cream); padding: 0; }
+  .catering-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; align-items: stretch;
+  }
+  .catering-img {
+    background-image: url("images/clambake.jpg");
+    background-size: cover; background-position: center;
+    min-height: 600px;
+  }
+  .catering-text {
+    padding: 6rem 5rem; background: var(--sand-soft);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .catering-text h2 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--ocean); margin-bottom: 2rem;
+  }
+  .catering-text h2 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass);
+  }
+  .catering-text p { color: #2a3b48; font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+  /* PARTNERS */
+  .partners { background: var(--sand-soft); }
+  .partners-cols { display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; }
+  .partners h3 {
+    font-family: 'Marcellus', serif; font-size: 0.85rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--brass); margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(184, 137, 61, 0.3);
+  }
+  .caterers-list { list-style: none; columns: 2; column-gap: 3rem; }
+  .caterers-list li {
+    padding: 0.8rem 0; border-bottom: 1px solid rgba(26, 46, 63, 0.1);
+    break-inside: avoid;
+  }
+  .caterers-list li .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.3rem;
+    color: var(--ocean); display: block;
+  }
+  .caterers-list li .loc {
+    font-size: 0.8rem; color: var(--storm);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .bartenders-list { list-style: none; }
+  .bartenders-list li {
+    padding: 1rem 0; border-bottom: 1px solid rgba(26, 46, 63, 0.1);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 1.2rem; color: var(--ocean);
+  }
+
+  /* BOOKING */
+  .booking { background: var(--ocean); color: var(--cream); }
+  .booking .section-head h2 { color: var(--cream); }
+  .booking .section-head h2 .ital { color: var(--brass-light); }
+  .booking .section-head .lede { color: rgba(247,242,232,0.75); }
+  .booking .eyebrow { color: var(--brass-light); }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .step { position: relative; padding-top: 3rem; }
+  .step::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 50px; height: 1px; background: var(--brass-light);
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1rem; color: var(--brass-light);
+    letter-spacing: 0.15em; margin-bottom: 1rem;
+  }
+  .step h3 { font-size: 1.6rem; color: var(--cream); margin-bottom: 1rem; }
+  .step p { color: rgba(247,242,232,0.75); }
+
+  /* GALLERY */
+  .gallery { background: var(--cream); padding: 8rem 0; }
+  .gallery .section-head {
+    padding: 0 2.5rem; max-width: 1280px;
+    margin: 0 auto 5rem auto;
+  }
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 180px; gap: 0.75rem; padding: 0 2.5rem;
+  }
+  .gallery-img {
+    background-size: cover; background-position: center;
+    overflow: hidden; transition: transform 0.6s;
+  }
+  .gallery-img:hover { transform: scale(1.02); }
+  .g-tall { grid-column: span 4; grid-row: span 3; }
+  .g-wide { grid-column: span 8; grid-row: span 2; }
+  .g-med { grid-column: span 4; grid-row: span 2; }
+  .g-sq { grid-column: span 4; grid-row: span 2; }
+  .g-wide-short { grid-column: span 8; grid-row: span 2; }
+
+  /* CONTACT */
+  .contact { background: var(--cream); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .contact-info h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--ocean); margin-bottom: 2rem; line-height: 1;
+  }
+  .contact-info h2 .ital {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--brass);
+  }
+  .contact-info .lede {
+    font-size: 1.15rem; color: var(--storm);
+    margin-bottom: 3rem; max-width: 42ch;
+  }
+  .contact-detail { padding: 1.2rem 0; border-bottom: 1px solid rgba(26, 46, 63, 0.1); }
+  .contact-detail .label {
+    font-family: 'Marcellus', serif; font-size: 0.72rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--brass); margin-bottom: 0.4rem;
+  }
+  .contact-detail .value { font-size: 1.15rem; color: var(--ocean); }
+  form { display: grid; gap: 1.25rem; }
+  form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .field label {
+    display: block; font-family: 'Marcellus', serif;
+    font-size: 0.7rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--brass); margin-bottom: 0.5rem;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 0.9rem 0;
+    border: none; border-bottom: 1px solid rgba(26, 46, 63, 0.2);
+    background: transparent;
+    font-family: 'Newsreader', serif; font-size: 1rem;
+    color: var(--ocean); outline: none;
+    transition: border-color 0.3s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-bottom-color: var(--brass);
+  }
+  .field textarea { resize: vertical; min-height: 100px; }
+
+  /* FOOTER */
+  footer { background: var(--ocean-deep); color: rgba(247,242,232,0.65); padding: 4rem 2.5rem 2rem; }
+  .footer-grid {
+    max-width: 1280px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(184, 137, 61, 0.2);
+  }
+  .footer-brand {
+    font-family: 'Marcellus', serif; font-size: 1.4rem;
+    letter-spacing: 0.12em; color: var(--cream); line-height: 1.2;
+  }
+  .footer-brand small {
+    display: block; font-size: 0.7rem; letter-spacing: 0.32em;
+    color: var(--brass-light); margin-top: 0.5rem;
+  }
+  .footer-col h4 {
+    font-family: 'Marcellus', serif; font-size: 0.72rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--brass-light); margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { padding: 0.35rem 0; }
+  .footer-col ul a:hover { color: var(--cream); }
+  .footer-bottom {
+    max-width: 1280px; margin: 0 auto;
+    padding-top: 2rem;
+    display: flex; justify-content: space-between;
+    font-size: 0.8rem; letter-spacing: 0.05em;
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 980px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    nav.open ul {
+      display: flex; position: absolute;
+      top: 100%; left: 0; right: 0; flex-direction: column;
+      background: var(--cream); padding: 2rem; gap: 1.5rem;
+      border-bottom: 1px solid rgba(26, 46, 63, 0.1);
+    }
+    nav.open ul a { color: var(--ocean); }
+    .mobile-toggle {
+      display: block; color: var(--cream);
+      font-family: 'Marcellus', serif; font-size: 0.75rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    nav.scrolled .mobile-toggle { color: var(--ocean); }
+    .hero { padding: 5rem 1.5rem 8rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); padding: 1.2rem 1.5rem; gap: 1.2rem; }
+    .hero-stats .stat-num { font-size: 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    .section-head { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+    .heritage-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .facts-grid { grid-template-columns: 1fr; }
+    .fact { border-right: none !important; }
+    .cinematic { padding: 0 1.5rem; min-height: 500px; }
+    .events-grid { grid-template-columns: 1fr; }
+    .showcase-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .grounds-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .gallery-grid { grid-template-columns: 1fr; padding: 0 1.5rem; grid-auto-rows: 240px; }
+    .g-tall, .g-wide, .g-med, .g-sq, .g-wide-short { grid-column: span 1; grid-row: span 1; }
+    .included-list { grid-template-columns: 1fr; }
+    .included-item, .included-item:nth-child(odd), .included-item:nth-child(even) {
+      padding-left: 0; padding-right: 0;
+    }
+    .catering-grid { grid-template-columns: 1fr; }
+    .catering-img { min-height: 350px; }
+    .catering-text { padding: 3rem 1.5rem; }
+    .partners-cols { grid-template-columns: 1fr; gap: 3rem; }
+    .caterers-list { columns: 1; }
+    .steps { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    form .row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; }
+  }
+
+  .planning-hero { min-height: 78vh; background: linear-gradient(90deg, rgba(15,30,43,.78), rgba(15,30,43,.25)), url('images/outdoor-cocktail.jpg') center/cover; display:flex; align-items:flex-end; color:var(--cream); padding:9rem 2.5rem 6rem; }
+  .planning-hero .inner { max-width:1280px; width:100%; margin:0 auto; }
+  .planning-hero h1 { font-size:clamp(3rem,7vw,6rem); max-width:13ch; margin:1rem 0 1.5rem; }
+  .planning-hero p { font-size:1.25rem; max-width:52ch; color:rgba(247,242,232,.92); }
+  .planning-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+  .planning-photo { min-height:620px; background:url('images/bridal-shower.jpg') center/cover; }
+  .planning-copy h2 { font-size:clamp(2.4rem,5vw,4rem); color:var(--ocean); margin:1rem 0 2rem; }
+  .planning-copy p { font-size:1.1rem; color:#2a3b48; margin-bottom:1.4rem; }
+  .planning-services { background:var(--ocean); color:var(--cream); }
+  .planning-services .section-head h2 { color:var(--cream); }
+  .planning-services .section-head .lede { color:rgba(247,242,232,.75); }
+  .planning-services .events-grid { background:rgba(184,137,61,.3); border-color:rgba(184,137,61,.3); }
+  .planning-services .event-card { background:var(--ocean-deep); }
+  .planning-services .event-card h3 { color:var(--cream); }
+  .planning-services .event-card p { color:rgba(247,242,232,.72); }
+  .planning-cta { text-align:center; background:var(--sand-soft); }
+  .planning-cta h2 { font-size:clamp(2.5rem,5vw,4rem); color:var(--ocean); max-width:18ch; margin:0 auto 1.5rem; }
+  .planning-cta p { max-width:52ch; margin:0 auto 2rem; font-size:1.15rem; color:var(--storm); }
+  @media(max-width:760px) { .planning-grid { grid-template-columns:1fr; gap:2.5rem; } .planning-photo { min-height:420px; } }
+</style>
+</head>
+<body>
+<nav id="nav" class="scrolled">
+  <div class="brand" style="color:var(--ocean);">Nahant Life Saving Station<small>Est. 1898 · Oceanfront Events</small></div>
+  <ul>
+    <li><a href="/#venue" style="color:var(--ocean);">The Space</a></li>
+    <li><a href="/#events" style="color:var(--ocean);">Events</a></li>
+    <li><a href="/event-planning" style="color:var(--ocean);">Event Planning</a></li>
+    <li><a href="/#gallery" style="color:var(--ocean);">Gallery</a></li>
+    <li><a href="/#contact" class="cta-nav" style="color:var(--ocean);">Inquire</a></li>
+  </ul>
+  <button class="mobile-toggle" id="mobileToggle">Menu</button>
+</nav>
+
+<section class="planning-hero">
+  <div class="inner">
+    <span class="eyebrow" style="color:var(--brass-light);">Event Planning with Lynda</span>
+    <h1>More than a beautiful setting. <span class="ital" style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--brass-light);">A beautifully planned day.</span></h1>
+    <p>Your event should feel like you — effortless to your guests, thoughtful in every detail, and even better than you imagined. Lynda can help turn the Station's blank canvas into a celebration that brings your vision to life.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container planning-grid">
+    <div class="planning-photo"></div>
+    <div class="planning-copy">
+      <span class="eyebrow">Experience That Scales</span>
+      <h2>From intimate gatherings to <span class="ital" style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--brass);">multi-day occasions.</span></h2>
+      <p>Lynda has planned and hosted weddings and other special occasions for groups ranging from just 10 people to more than 1,000 guests, including events extending across multiple days.</p>
+      <p>That experience brings perspective to the details that make an event work: the flow of the day, timing, vendors, setup, guest experience, transitions, contingency planning and the small touches guests remember long after the event ends.</p>
+      <p>At the Nahant Life Saving Station, that experience is paired with an unusually flexible oceanfront setting. The goal is not to impose a package or a theme. It is to help make <strong>your special day everything you wish for — and more.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="planning-services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-block">
+        <span class="eyebrow" style="color:var(--brass-light);">Planning Support</span>
+        <h2>Bring the vision. <span class="ital">We'll help connect the details.</span></h2>
+      </div>
+      <p class="lede">Planning support can help you use the Station, grounds, vendors and scheduled event time intentionally so the day feels cohesive from setup through cleanup.</p>
+    </div>
+    <div class="events-grid">
+      <div class="event-card"><div class="num">— 01</div><h3>Vision & <span class="ital">event flow</span></h3><p>Translate the feeling you want into a practical plan for the room, grounds, guest arrival, dining, celebration and transitions throughout the event.</p></div>
+      <div class="event-card"><div class="num">— 02</div><h3>Vendor <span class="ital">coordination</span></h3><p>Help align catering, bartending, rentals, tenting and other event partners so everyone understands the schedule, access and expectations.</p></div>
+      <div class="event-card"><div class="num">— 03</div><h3>Setup & <span class="ital">timing</span></h3><p>Build the required setup and cleanup periods into the event plan. Every rental includes one scheduled hour for setup and one scheduled hour for cleanup, with no access outside the booked hours.</p></div>
+      <div class="event-card"><div class="num">— 04</div><h3>Guest <span class="ital">experience</span></h3><p>Think through the moments guests actually experience — arrival, seating, food, photographs, speeches, weather alternatives and the natural rhythm of an oceanfront event.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="planning-cta">
+  <div class="container">
+    <span class="eyebrow">Begin With Your Vision</span>
+    <h2>Let's create a day that feels completely yours.</h2>
+    <p>Tell us what you're celebrating, who you're bringing together and what you hope the day will feel like. We'll help you explore the Station and the level of planning support that's right for your event.</p>
+    <a href="/#contact" class="btn dark">Inquire About Your Event →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand">Nahant Life<br>Saving Station<small>Est. 1898 · Nahant, MA</small></div><p style="margin-top:1.5rem;max-width:32ch;font-size:.9rem;">A first-class oceanfront event space — historic in character, flexible by design, and ready to become your own.</p></div>
+    <div class="footer-col"><h4>Visit</h4><ul><li><a href="/#venue">The Space</a></li><li><a href="/#events">Events We Host</a></li><li><a href="/event-planning">Event Planning</a></li><li><a href="/#gallery">Gallery</a></li></ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul><li><a href="/#contact">Inquire</a></li><li><a href="mailto:events@nahantlifesavingstation.com">events@</a></li><li><a href="https://www.facebook.com/profile.php?id=61575839620032" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    <div class="footer-col"><h4>Address</h4><ul><li>Nahant Beach</li><li>Nahant, MA 01908</li><li>North Shore, Massachusetts</li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Nahant Life Saving Station. All rights reserved.</div><div>Restored 2010 · Watched over since 1898</div></div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+document.getElementById('mobileToggle').addEventListener('click',()=>nav.classList.toggle('open'));
+</script>
+</body>
+</html>
