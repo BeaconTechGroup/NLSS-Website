@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://nahantlifesavingstation.com/" />
 <meta property="og:image" content="https://nahantlifesavingstation.com/images/hero-station.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/images/nlss-logo-icon.png" type="image/png" />
 <meta name="description" content="Create your own unforgettable event at the Nahant Life Saving Station, a distinctive oceanfront venue on Massachusetts' North Shore for intimate weddings, engagement parties, family reunions, showers, celebrations and private events. Up to 60 guests indoors and 100 outdoors." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,17 +69,18 @@
     background: rgba(247, 242, 232, 0.94); backdrop-filter: blur(12px);
     padding: 0.85rem 2.5rem; border-bottom: 1px solid rgba(26, 46, 63, 0.08);
   }
-  nav .brand {
-    font-family: 'Marcellus', serif; font-size: 1rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--cream); transition: color 0.4s;
+  nav .brand-link { display:flex; align-items:center; min-width:0; }
+  nav .nav-logo { display:block; height:64px; width:auto; max-width:min(470px,40vw); object-fit:contain; }
+  nav .brand-fallback {
+    font-family:'Marcellus',serif; font-size:1rem; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--cream); transition:color .4s;
   }
-  nav.scrolled .brand { color: var(--ocean); }
-  nav .brand small {
-    display: block; font-size: 0.6rem; letter-spacing: 0.32em;
-    color: var(--brass-light); margin-top: 2px;
+  nav .brand-fallback small {
+    display:block; font-size:.6rem; letter-spacing:.32em;
+    color:var(--brass-light); margin-top:2px;
   }
-  nav.scrolled .brand small { color: var(--brass); }
+  nav.scrolled .brand-fallback { color:var(--ocean); }
+  nav.scrolled .brand-fallback small { color:var(--brass); }
   nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
   nav ul a {
     font-family: 'Marcellus', serif; font-size: 0.78rem;
@@ -536,13 +537,15 @@
     gap: 3rem; padding-bottom: 3rem;
     border-bottom: 1px solid rgba(184, 137, 61, 0.2);
   }
-  .footer-brand {
-    font-family: 'Marcellus', serif; font-size: 1.4rem;
-    letter-spacing: 0.12em; color: var(--cream); line-height: 1.2;
+  .footer-brand { display:block; }
+  .footer-logo { display:block; width:min(300px,100%); height:auto; object-fit:contain; }
+  .footer-brand-fallback {
+    font-family:'Marcellus',serif; font-size:1.4rem;
+    letter-spacing:.12em; color:var(--cream); line-height:1.2;
   }
-  .footer-brand small {
-    display: block; font-size: 0.7rem; letter-spacing: 0.32em;
-    color: var(--brass-light); margin-top: 0.5rem;
+  .footer-brand-fallback small {
+    display:block; font-size:.7rem; letter-spacing:.32em;
+    color:var(--brass-light); margin-top:.5rem;
   }
   .footer-col h4 {
     font-family: 'Marcellus', serif; font-size: 0.72rem;
@@ -564,6 +567,7 @@
 
   @media (max-width: 980px) {
     nav { padding: 1rem 1.5rem; }
+    nav .nav-logo { height:48px; max-width:68vw; }
     nav ul { display: none; }
     nav.open ul {
       display: flex; position: absolute;
@@ -612,10 +616,10 @@
 <body>
 
 <nav id="nav">
-  <div class="brand">
-    Nahant Life Saving Station
-    <small>Est. 1898 · Oceanfront Events</small>
-  </div>
+  <a href="/" class="brand-link" aria-label="Nahant Life Saving Station home">
+    <img class="nav-logo" src="/images/nlss-logo-horizontal.png" alt="Nahant Life Saving Station" onload="this.nextElementSibling.hidden=true" onerror="this.style.display='none'">
+    <span class="brand-fallback">Nahant Life Saving Station<small>Est. 1898 · Oceanfront Events</small></span>
+  </a>
   <ul>
     <li><a href="#venue">The Space</a></li>
     <li><a href="#events">Events</a></li>
@@ -1024,10 +1028,10 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-brand">
-        Nahant Life<br>Saving Station
-        <small>Est. 1898 · Nahant, MA</small>
-      </div>
+      <a href="/" class="footer-brand" aria-label="Nahant Life Saving Station home">
+        <img class="footer-logo" src="/images/nlss-logo-primary.png" alt="Nahant Life Saving Station" onload="this.nextElementSibling.hidden=true" onerror="this.style.display='none'">
+        <span class="footer-brand-fallback">Nahant Life<br>Saving Station<small>Est. 1898 · Nahant, MA</small></span>
+      </a>
       <p style="margin-top: 1.5rem; max-width: 32ch; font-size: 0.9rem;">A first-class oceanfront event space — historic in character, flexible by design, and ready to become your own.</p>
     </div>
     <div class="footer-col">
@@ -1043,7 +1047,7 @@
       <h4>Connect</h4>
       <ul>
         <li><a href="#contact">Inquire</a></li>
-        <li><a href="mailto:info@nahantlifesavingstation.com">events@</a></li>
+        <li><a href="mailto:info@nahantlifesavingstation.com">info@</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=61575839620032" target="_blank" rel="noopener">Facebook</a></li>
       </ul>
     </div>
