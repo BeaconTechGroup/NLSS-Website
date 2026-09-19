@@ -484,6 +484,79 @@
   .g-sq { grid-column: span 4; grid-row: span 2; }
   .g-wide-short { grid-column: span 8; grid-row: span 2; }
 
+
+  /* AVAILABILITY */
+  .availability { background: var(--sand-soft); }
+  .availability-wrap {
+    display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+    gap: 3rem; align-items: start;
+  }
+  .calendar-shell {
+    background: var(--cream); border: 1px solid rgba(26,46,63,.12);
+    padding: 1.5rem; box-shadow: 0 14px 40px rgba(15,30,43,.08);
+  }
+  .calendar-head {
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; margin-bottom:1.25rem;
+  }
+  .calendar-title {
+    font-family:'Marcellus',serif; color:var(--ocean);
+    font-size:1.55rem; letter-spacing:.03em;
+  }
+  .calendar-nav {
+    display:flex; gap:.5rem;
+  }
+  .calendar-nav button {
+    border:1px solid rgba(26,46,63,.18); background:transparent;
+    color:var(--ocean); width:40px; height:40px; cursor:pointer;
+    font-family:'Marcellus',serif; transition:.2s;
+  }
+  .calendar-nav button:hover { background:var(--ocean); color:var(--cream); }
+  .calendar-weekdays, .calendar-grid {
+    display:grid; grid-template-columns:repeat(7,1fr); gap:.45rem;
+  }
+  .calendar-weekdays div {
+    text-align:center; font-family:'Marcellus',serif; font-size:.68rem;
+    letter-spacing:.15em; text-transform:uppercase; color:var(--storm);
+    padding:.35rem 0;
+  }
+  .calendar-day {
+    min-height:74px; border:1px solid rgba(26,46,63,.10);
+    background:#fffdf8; padding:.55rem; position:relative;
+    color:var(--ocean); cursor:pointer; transition:.2s;
+  }
+  .calendar-day:hover:not(.empty):not(.unavailable) {
+    border-color:var(--brass); background:#fffaf0; transform:translateY(-1px);
+  }
+  .calendar-day.empty { border-color:transparent; background:transparent; cursor:default; }
+  .calendar-day.unavailable {
+    background:rgba(26,46,63,.08); color:var(--storm); cursor:not-allowed;
+  }
+  .calendar-day .num { font-family:'Marcellus',serif; font-size:.95rem; }
+  .calendar-day .status {
+    display:block; margin-top:.7rem; font-size:.62rem; letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .calendar-day.available .status { color:var(--brass); }
+  .calendar-day.unavailable .status { color:var(--storm); }
+  .availability-note {
+    background:var(--ocean); color:var(--cream); padding:2.25rem;
+  }
+  .availability-note h3 { font-size:1.8rem; margin-bottom:1rem; }
+  .availability-note p { color:rgba(247,242,232,.78); margin-bottom:1rem; }
+  .availability-legend {
+    display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0 1.5rem;
+    font-family:'Marcellus',serif; font-size:.72rem; letter-spacing:.09em;
+    text-transform:uppercase;
+  }
+  .legend-dot { width:10px; height:10px; display:inline-block; margin-right:.4rem; }
+  .legend-dot.open { background:var(--brass-light); }
+  .legend-dot.closed { background:var(--storm); }
+  .selected-date {
+    margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(247,242,232,.18);
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem;
+  }
+
   /* CONTACT */
   .contact { background: var(--cream); }
   .contact-grid {
@@ -606,6 +679,9 @@
     .partners-cols { grid-template-columns: 1fr; gap: 3rem; }
     .caterers-list { columns: 1; }
     .steps { grid-template-columns: 1fr; gap: 2rem; }
+    .availability-wrap { grid-template-columns:1fr; }
+    .calendar-day { min-height:58px; padding:.4rem; }
+    .calendar-day .status { display:none; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     form .row { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -623,6 +699,7 @@
   <ul>
     <li><a href="#venue">The Space</a></li>
     <li><a href="#events">Events</a></li>
+    <li><a href="#availability">Availability</a></li>
     <li><a href="/event-planning">Event Planning</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact" class="cta-nav">Inquire</a></li>
@@ -937,6 +1014,47 @@
   </div>
 </section>
 
+
+<section class="availability" id="availability">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow-block">
+        <span class="eyebrow">Check Availability</span>
+        <h2>Find a date for <span class="ital">your event.</span></h2>
+      </div>
+      <p class="lede">Browse our current availability. Dates marked unavailable are already booked or being held. All availability is subject to final confirmation by the Nahant Life Saving Station event team.</p>
+    </div>
+
+    <div class="availability-wrap">
+      <div class="calendar-shell">
+        <div class="calendar-head">
+          <div class="calendar-title" id="calendarTitle"></div>
+          <div class="calendar-nav">
+            <button type="button" id="calendarPrev" aria-label="Previous month">‹</button>
+            <button type="button" id="calendarNext" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="calendar-weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div class="calendar-grid" id="availabilityCalendar"></div>
+      </div>
+
+      <aside class="availability-note">
+        <span class="eyebrow">Plan Your Date</span>
+        <h3>See an open date you like?</h3>
+        <p>Select an available date and we'll carry it directly into the inquiry form below.</p>
+        <div class="availability-legend">
+          <span><span class="legend-dot open"></span>Available</span>
+          <span><span class="legend-dot closed"></span>Unavailable</span>
+        </div>
+        <a href="#contact" class="btn brass" id="availabilityInquire">Inquire About a Date →</a>
+        <div class="selected-date" id="selectedDateText">No date selected yet.</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <section class="gallery" id="gallery">
   <div class="section-head">
     <div class="eyebrow-block">
@@ -1039,6 +1157,7 @@
       <ul>
         <li><a href="#heritage">The Heritage</a></li>
         <li><a href="#events">Events We Host</a></li>
+        <li><a href="#availability">Availability</a></li>
         <li><a href="/event-planning">Event Planning</a></li>
         <li><a href="#gallery">Gallery</a></li>
       </ul>
@@ -1065,6 +1184,80 @@
     <div>Restored 2010 · Watched over since 1898</div>
   </div>
 </footer>
+
+
+<script>
+  // Public-facing availability snapshot, synced from the NLSS Google Calendar on Sep 19, 2026.
+  // Only busy dates are exposed here; event names and client details remain private.
+  const blockedDates = new Set([
+    '2026-09-26','2026-10-03','2026-10-04','2026-10-11','2026-10-16','2026-10-19',
+    '2026-11-15','2026-12-10','2026-12-19',
+    '2027-05-15','2027-05-29','2027-06-10','2027-06-12','2027-06-19','2027-06-20',
+    '2027-07-03','2027-07-24','2027-07-31','2027-08-28','2027-09-06'
+  ]);
+
+  const today = new Date(2026, 8, 19);
+  let calendarCursor = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  const calendarEl = document.getElementById('availabilityCalendar');
+  const titleEl = document.getElementById('calendarTitle');
+  const selectedEl = document.getElementById('selectedDateText');
+
+  function isoDate(y,m,d) {
+    return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+  }
+
+  function renderAvailabilityCalendar() {
+    const y = calendarCursor.getFullYear();
+    const m = calendarCursor.getMonth();
+    titleEl.textContent = calendarCursor.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+    calendarEl.innerHTML = '';
+
+    const first = new Date(y,m,1).getDay();
+    const days = new Date(y,m+1,0).getDate();
+
+    for (let i=0;i<first;i++) {
+      const blank=document.createElement('div');
+      blank.className='calendar-day empty';
+      calendarEl.appendChild(blank);
+    }
+
+    for (let d=1;d<=days;d++) {
+      const key=isoDate(y,m,d);
+      const cell=document.createElement('button');
+      cell.type='button';
+      const dateObj=new Date(y,m,d);
+      const isPast=dateObj < new Date(today.getFullYear(),today.getMonth(),today.getDate());
+      const blocked=blockedDates.has(key) || isPast;
+      cell.className='calendar-day ' + (blocked ? 'unavailable' : 'available');
+      cell.disabled=blocked;
+      cell.innerHTML='<span class="num">'+d+'</span><span class="status">'+(blocked?'Unavailable':'Available')+'</span>';
+
+      if (!blocked) {
+        cell.addEventListener('click',()=>{
+          const input=document.querySelector('input[name="preferred-date"]');
+          if (input) input.value=key;
+          selectedEl.textContent='Selected: '+dateObj.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+          document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+        });
+      }
+      calendarEl.appendChild(cell);
+    }
+  }
+
+  document.getElementById('calendarPrev').addEventListener('click',()=>{
+    const minMonth=new Date(today.getFullYear(),today.getMonth(),1);
+    const prev=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()-1,1);
+    if (prev>=minMonth) calendarCursor=prev;
+    renderAvailabilityCalendar();
+  });
+  document.getElementById('calendarNext').addEventListener('click',()=>{
+    calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()+1,1);
+    renderAvailabilityCalendar();
+  });
+  document.getElementById('availabilityInquire').addEventListener('click',()=>{});
+  renderAvailabilityCalendar();
+</script>
 
 <script>
   const nav = document.getElementById('nav');
